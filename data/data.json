@@ -1,0 +1,44 @@
+[
+    {
+        "nama": "Malya",
+        "no_hp": "00001111",
+        "barang": "Buku",
+        "jumlah": 20,
+        "total_harga": 90000.0
+    },
+    {
+        "nama": "Karina",
+        "no_hp": "00002222",
+        "barang": "Penghapus",
+        "jumlah": 10,
+        "total_harga": 15000
+    },
+    {
+        "nama": "Malya",
+        "no_hp": "000999",
+        "barang": "Penghapus",
+        "jumlah": 3,
+        "total_harga": 4500
+    },
+    {
+        "nama": "Keonho",
+        "no_hp": "000333",
+        "barang": "Penghapus",
+        "jumlah": 11,
+        "total_harga": 16500
+    },
+    {
+        "nama": "Minjeong",
+        "no_hp": "000777",
+        "barang": "Pensil",
+        "jumlah": 5,
+        "total_harga": 10000
+    },
+    {
+        "nama": "Ian",
+        "no_hp": "112233",
+        "barang": "Pulpen",
+        "jumlah": 10,
+        "total_harga": 30000
+    }
+]

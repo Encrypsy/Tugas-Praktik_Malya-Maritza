@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemesanan Alat Tulis Kantor</title>
+    <!-- Instruksi 1a menghubungkan file css dengan halaman website -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="header">
+        <!-- instruksi 1b menambahkan logo -->
+        <img src="{% static "img/logo.png" %}" alt="">
+        <h1>Pemesanan Alat Tulis Kantor</h1>
+    </div>
+    <form action="{% url "home" %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nama" class="form-label">Nama Pelanggan</label>
+            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Anda">
+        </div>
+
+        <div class="mb-3">
+            <label for="no_hp" class="form-label">No Hp</label>
+            <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukkan No Hp">
+        </div>
+
+        <div class="mb-3">
+            <label for="barang" class="form-label">Jenis Barang</label>
+            <!-- instruksi 2c, menampilkan dropdown array menggunakan perulangan -->
+            <select name="barang" id="">
+                {% for barang in jenis_barang %}
+                    <option value="{{ barang }}">{{ barang }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="jumlah" class="form-label">Jumlah Barang</label>
+            <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah">
+        </div>
+
+        <button type="submit" class="btn btn-primary" name="pesan">Pesan</button>
+    </form>
+
+    {% if total_harga %}
+
+        <div class="hasil">
+            <h3>Detail Pesanan</h3>
+
+            <p>Nama: {{ nama }}</p>
+            <p>No HP: {{ no_hp }}</p>
+            <p>Jenis Barang: {{ barang }}</p>
+            <p>Jumlah Barang: {{ jumlah }}</p>
+
+            <h4>
+                Total Tagihan: Rp {{ total_harga }}
+            </h4>
+        </div>
+
+    {% endif %}
+</div>
+</body>
+</html>
